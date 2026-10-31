@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hassa-sudan
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: HASSA_DEV_OTP
+        value: "1"
+      - key: HASSA_ADMIN_KEY
+        generateValue: true
